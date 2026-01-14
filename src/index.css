@@ -1,109 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Axiora SL - Design System for Heavy Transport Company
-   Professional and corporate style with navy blue and orange accents
-   All colors in HSL format
+/* Axiora SL - Corporate Design System
+   Principal: #1A2B4C (HSL: 215, 49%, 20%)
+   Secundario: #FF6600 (HSL: 24, 100%, 50%)
+   Complementario: #5A5A5A (HSL: 0, 0%, 35%)
 */
 
 @layer base {
   :root {
-    /* Navy blue primary - professional transport industry color */
+    /* Axiora Principal - #1A2B4C */
     --background: 210 20% 98%;
-    --foreground: 215 25% 15%;
+    --foreground: 215 49% 20%;
 
     --card: 0 0% 100%;
-    --card-foreground: 215 25% 15%;
+    --card-foreground: 215 49% 20%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 215 25% 15%;
+    --popover-foreground: 215 49% 20%;
 
-    /* Navy blue - trust, professionalism, reliability */
-    --primary: 215 60% 25%;
-    --primary-foreground: 210 40% 98%;
+    /* Principal: #1A2B4C */
+    --primary: 215 49% 20%;
+    --primary-foreground: 0 0% 100%;
 
-    /* Light gray blue - subtle backgrounds */
-    --secondary: 210 15% 93%;
-    --secondary-foreground: 215 25% 15%;
+    /* Light backgrounds */
+    --secondary: 210 20% 96%;
+    --secondary-foreground: 215 49% 20%;
 
     --muted: 210 15% 93%;
-    --muted-foreground: 215 15% 45%;
+    --muted-foreground: 0 0% 35%;
 
-    /* Orange accent - energy, action, transport industry */
-    --accent: 25 95% 53%;
+    /* Secundario: #FF6600 */
+    --accent: 24 100% 50%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
     --border: 214 20% 88%;
     --input: 214 20% 88%;
-    --ring: 215 60% 25%;
+    --ring: 24 100% 50%;
 
     --radius: 0.5rem;
 
-    /* Success state for tracking */
+    /* Status colors */
     --success: 142 76% 36%;
     --success-foreground: 0 0% 100%;
-
-    /* Warning state for tracking */
     --warning: 38 92% 50%;
     --warning-foreground: 0 0% 100%;
 
-    --sidebar-background: 215 60% 20%;
-    --sidebar-foreground: 210 40% 98%;
-    --sidebar-primary: 25 95% 53%;
+    /* Sidebar */
+    --sidebar-background: 215 49% 15%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 24 100% 50%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 215 50% 30%;
-    --sidebar-accent-foreground: 210 40% 98%;
-    --sidebar-border: 215 40% 35%;
-    --sidebar-ring: 25 95% 53%;
+    --sidebar-accent: 215 49% 25%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 215 40% 25%;
+    --sidebar-ring: 24 100% 50%;
+
+    /* Complementario: #5A5A5A */
+    --gray: 0 0% 35%;
   }
 
   .dark {
-    --background: 215 25% 10%;
-    --foreground: 210 40% 98%;
+    --background: 215 49% 8%;
+    --foreground: 0 0% 98%;
 
-    --card: 215 25% 13%;
-    --card-foreground: 210 40% 98%;
+    --card: 215 49% 12%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 215 25% 13%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 215 49% 12%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 215 60% 25%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 215 49% 20%;
 
-    --secondary: 215 25% 18%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 215 40% 18%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 215 25% 18%;
-    --muted-foreground: 215 15% 65%;
+    --muted: 215 40% 18%;
+    --muted-foreground: 0 0% 65%;
 
-    --accent: 25 95% 53%;
+    --accent: 24 100% 50%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 215 25% 22%;
-    --input: 215 25% 22%;
-    --ring: 210 40% 98%;
+    --border: 215 40% 20%;
+    --input: 215 40% 20%;
+    --ring: 24 100% 50%;
 
     --success: 142 76% 36%;
     --success-foreground: 0 0% 100%;
-
     --warning: 38 92% 50%;
     --warning-foreground: 0 0% 100%;
 
-    --sidebar-background: 215 30% 8%;
-    --sidebar-foreground: 210 40% 98%;
-    --sidebar-primary: 25 95% 53%;
+    --sidebar-background: 215 49% 6%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 24 100% 50%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 215 25% 15%;
-    --sidebar-accent-foreground: 210 40% 98%;
-    --sidebar-border: 215 25% 18%;
-    --sidebar-ring: 25 95% 53%;
+    --sidebar-accent: 215 49% 15%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 215 49% 15%;
+    --sidebar-ring: 24 100% 50%;
+
+    --gray: 0 0% 65%;
   }
 }
 
@@ -112,9 +118,13 @@
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-background text-foreground antialiased;
-    font-feature-settings: "rlig" 1, "calt" 1;
+    font-family: 'Montserrat', sans-serif;
   }
 }
 
@@ -124,10 +134,52 @@
   }
   
   .gradient-primary {
-    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(215 50% 35%) 100%);
+    background: linear-gradient(135deg, hsl(215 49% 20%) 0%, hsl(215 49% 30%) 100%);
   }
   
   .gradient-accent {
-    background: linear-gradient(135deg, hsl(var(--accent)) 0%, hsl(30 95% 45%) 100%);
+    background: linear-gradient(135deg, hsl(24 100% 50%) 0%, hsl(35 100% 55%) 100%);
   }
+
+  .gradient-hero {
+    background: linear-gradient(135deg, hsl(215 49% 15%) 0%, hsl(215 49% 25%) 50%, hsl(215 49% 18%) 100%);
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, hsl(24 100% 50%) 0%, hsl(35 100% 55%) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(210 20% 96%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(215 49% 20%);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(24 100% 50%);
 }
