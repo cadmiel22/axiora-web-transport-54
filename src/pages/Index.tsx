@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { 
   Truck, Package, MapPin, Clock, Shield, CheckCircle, 
   ArrowRight, Search, Globe, Users, Award, Phone, 
-  ChevronRight, Zap, Target, TrendingUp
+  ChevronRight, Zap, Target, TrendingUp, Heart
 } from "lucide-react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -14,56 +14,49 @@ const services = [
   {
     icon: Truck,
     title: "Transporte Nacional",
-    description: "Cobertura completa en toda la península con entregas en 24-48h.",
-    features: ["Entregas express", "Cargas completas", "Grupaje"]
+    description: "Cobertura en toda la península ibérica con entregas puntuales.",
+    features: ["Entregas flexibles", "Carga completa", "Rutas directas"]
   },
   {
     icon: Globe,
     title: "Transporte Internacional",
-    description: "Red europea con partners certificados en más de 20 países.",
-    features: ["Francia", "Portugal", "Alemania", "Italia"]
+    description: "Conexiones con Portugal y Francia. Ampliando horizontes.",
+    features: ["Portugal", "Francia", "En expansión"]
   },
   {
     icon: Package,
-    title: "Cargas Especiales",
-    description: "Maquinaria pesada, dimensiones excepcionales y ADR.",
-    features: ["Góndolas", "Plataformas", "Frigoríficos"]
+    title: "Cargas Completas",
+    description: "Tráiler dedicado exclusivamente para su mercancía.",
+    features: ["24 toneladas", "Sin transbordos", "Directo"]
   },
   {
     icon: Shield,
-    title: "Logística Integral",
-    description: "Almacenaje, distribución y gestión completa de su cadena.",
-    features: ["Almacén", "Cross-docking", "Última milla"]
+    title: "Atención Personal",
+    description: "Trato directo y personalizado. Usted habla con el responsable.",
+    features: ["Trato directo", "Flexibilidad", "Compromiso"]
   }
-];
-
-const stats = [
-  { value: "25+", label: "Años de experiencia", icon: Award },
-  { value: "50K+", label: "Envíos realizados", icon: Package },
-  { value: "150+", label: "Vehículos en flota", icon: Truck },
-  { value: "98%", label: "Entregas puntuales", icon: Target }
 ];
 
 const advantages = [
   {
     icon: Zap,
-    title: "Rapidez",
-    description: "Plazos de entrega competitivos con seguimiento en tiempo real."
+    title: "Agilidad",
+    description: "Sin intermediarios. Decisiones rápidas y respuesta inmediata."
   },
   {
-    icon: Shield,
-    title: "Seguridad",
-    description: "Seguro integral de mercancías y protocolos de seguridad certificados."
+    icon: Heart,
+    title: "Trato Personal",
+    description: "Atención directa del propietario. Su carga es nuestra prioridad."
   },
   {
     icon: TrendingUp,
-    title: "Eficiencia",
-    description: "Optimización de rutas y costes para máxima rentabilidad."
+    title: "Precios Competitivos",
+    description: "Costes ajustados sin comprometer la calidad del servicio."
   },
   {
-    icon: Users,
-    title: "Atención",
-    description: "Equipo dedicado disponible 24/7 para su tranquilidad."
+    icon: Shield,
+    title: "Compromiso",
+    description: "Cumplimos lo que prometemos. Su confianza es nuestro mayor activo."
   }
 ];
 
@@ -104,7 +97,7 @@ export default function Index() {
             <div className="text-center lg:text-left">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/20 text-accent mb-8">
                 <Truck className="h-4 w-4" />
-                <span className="text-sm font-semibold">Líderes en Transporte Pesado</span>
+                <span className="text-sm font-semibold">Transporte de Confianza</span>
               </div>
               
               <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black text-primary-foreground leading-[1.1] tracking-tight">
@@ -115,8 +108,8 @@ export default function Index() {
               </h1>
               
               <p className="mt-6 text-lg lg:text-xl text-primary-foreground/70 max-w-xl mx-auto lg:mx-0">
-                Más de 25 años conectando destinos en España y Europa. 
-                Soluciones logísticas con la máxima garantía de <strong className="text-primary-foreground">seguridad</strong> y <strong className="text-primary-foreground">puntualidad</strong>.
+                Transporte pesado por carretera con <strong className="text-primary-foreground">trato personal</strong> y <strong className="text-primary-foreground">compromiso real</strong>. 
+                Conectamos España con Europa.
               </p>
 
               {/* CTA Buttons */}
@@ -143,14 +136,20 @@ export default function Index() {
                 </Button>
               </div>
 
-              {/* Quick Stats */}
-              <div className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-6">
-                {stats.map((stat) => (
-                  <div key={stat.label} className="text-center lg:text-left">
-                    <div className="text-2xl sm:text-3xl font-black text-accent">{stat.value}</div>
-                    <div className="text-xs text-primary-foreground/60 font-medium mt-1">{stat.label}</div>
-                  </div>
-                ))}
+              {/* Quick highlights */}
+              <div className="mt-12 flex flex-wrap items-center justify-center lg:justify-start gap-6">
+                <div className="flex items-center gap-2 text-primary-foreground/80">
+                  <CheckCircle className="h-5 w-5 text-accent" />
+                  <span className="text-sm font-medium">Trato directo</span>
+                </div>
+                <div className="flex items-center gap-2 text-primary-foreground/80">
+                  <CheckCircle className="h-5 w-5 text-accent" />
+                  <span className="text-sm font-medium">Precios competitivos</span>
+                </div>
+                <div className="flex items-center gap-2 text-primary-foreground/80">
+                  <CheckCircle className="h-5 w-5 text-accent" />
+                  <span className="text-sm font-medium">Seguimiento online</span>
+                </div>
               </div>
             </div>
 
@@ -194,11 +193,11 @@ export default function Index() {
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-muted-foreground">¿Necesitas ayuda?</span>
                     <a 
-                      href="tel:+34900000000" 
+                      href="tel:+34600000000" 
                       className="flex items-center gap-2 text-sm font-semibold text-accent hover:text-accent/80 transition-colors"
                     >
                       <Phone className="h-4 w-4" />
-                      900 000 000
+                      600 000 000
                     </a>
                   </div>
                 </div>
@@ -207,15 +206,15 @@ export default function Index() {
               {/* Floating elements */}
               <div className="hidden lg:block absolute -top-6 -right-6 bg-accent text-accent-foreground rounded-2xl p-4 shadow-xl animate-float">
                 <div className="flex items-center gap-2">
-                  <Clock className="h-5 w-5" />
-                  <span className="font-bold text-sm">24/7 Operativo</span>
+                  <Heart className="h-5 w-5" />
+                  <span className="font-bold text-sm">Trato Personal</span>
                 </div>
               </div>
               
               <div className="hidden lg:block absolute -bottom-4 -left-4 bg-card text-foreground rounded-2xl p-4 shadow-xl border border-border/50 animate-float" style={{ animationDelay: "3s" }}>
                 <div className="flex items-center gap-2">
-                  <CheckCircle className="h-5 w-5 text-accent" />
-                  <span className="font-bold text-sm">98% Puntualidad</span>
+                  <Truck className="h-5 w-5 text-accent" />
+                  <span className="font-bold text-sm">24 Toneladas</span>
                 </div>
               </div>
             </div>
@@ -236,12 +235,12 @@ export default function Index() {
               <span className="text-gradient"> a medida</span>
             </h2>
             <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-              Adaptamos nuestros servicios a las necesidades específicas de cada cliente
+              Servicio personalizado adaptado a las necesidades de cada cliente
             </p>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {services.map((service, index) => (
+            {services.map((service) => (
               <div 
                 key={service.title}
                 className="group relative bg-card rounded-2xl p-6 lg:p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-border/50 hover:border-accent/30"
@@ -295,11 +294,12 @@ export default function Index() {
                 ¿Por qué Axiora?
               </span>
               <h2 className="text-3xl lg:text-5xl font-black text-foreground leading-tight">
-                La confianza de más de 
-                <span className="text-gradient"> 5.000 clientes</span>
+                Pequeños pero
+                <span className="text-gradient"> comprometidos</span>
               </h2>
               <p className="mt-6 text-lg text-muted-foreground">
-                Combinamos décadas de experiencia con la última tecnología para ofrecer un servicio de transporte excepcional. Tu mercancía está en las mejores manos.
+                Ser una empresa joven nos permite ofrecerte algo que las grandes no pueden: 
+                <strong className="text-foreground"> trato directo, flexibilidad total y compromiso personal</strong> con cada envío.
               </p>
 
               <div className="mt-10 grid sm:grid-cols-2 gap-6">
@@ -324,43 +324,40 @@ export default function Index() {
               </Button>
             </div>
 
-            {/* Certificates Box */}
+            {/* Info Box */}
             <div className="relative">
               <div className="bg-primary rounded-3xl p-10 lg:p-12 text-primary-foreground">
                 <div className="text-center">
-                  <Award className="mx-auto h-20 w-20 text-accent" />
-                  <h3 className="mt-6 text-2xl lg:text-3xl font-black">Certificados de Calidad</h3>
+                  <Truck className="mx-auto h-20 w-20 text-accent" />
+                  <h3 className="mt-6 text-2xl lg:text-3xl font-black">Nuestro Tráiler</h3>
                   <p className="mt-3 text-primary-foreground/70">
-                    Cumplimos con los más altos estándares de calidad y seguridad
+                    Vehículo moderno y bien equipado para garantizar la seguridad de tu carga
                   </p>
                   
                   <div className="mt-8 flex flex-wrap justify-center gap-4">
                     <span className="inline-flex items-center gap-2 rounded-full bg-primary-foreground/10 px-4 py-2 text-sm font-semibold">
-                      <CheckCircle className="h-4 w-4 text-accent" /> ISO 9001
+                      <CheckCircle className="h-4 w-4 text-accent" /> Lona
                     </span>
                     <span className="inline-flex items-center gap-2 rounded-full bg-primary-foreground/10 px-4 py-2 text-sm font-semibold">
-                      <CheckCircle className="h-4 w-4 text-accent" /> ADR
+                      <CheckCircle className="h-4 w-4 text-accent" /> 24 Ton
                     </span>
                     <span className="inline-flex items-center gap-2 rounded-full bg-primary-foreground/10 px-4 py-2 text-sm font-semibold">
-                      <CheckCircle className="h-4 w-4 text-accent" /> GDP
-                    </span>
-                    <span className="inline-flex items-center gap-2 rounded-full bg-primary-foreground/10 px-4 py-2 text-sm font-semibold">
-                      <CheckCircle className="h-4 w-4 text-accent" /> ISO 14001
+                      <CheckCircle className="h-4 w-4 text-accent" /> GPS
                     </span>
                   </div>
 
                   <div className="mt-8 pt-8 border-t border-primary-foreground/10 grid grid-cols-3 gap-4">
                     <div>
-                      <div className="text-3xl font-black text-accent">25+</div>
-                      <div className="text-xs text-primary-foreground/60 mt-1">Años</div>
+                      <div className="text-3xl font-black text-accent">13.6m</div>
+                      <div className="text-xs text-primary-foreground/60 mt-1">Longitud</div>
                     </div>
                     <div>
-                      <div className="text-3xl font-black text-accent">150+</div>
-                      <div className="text-xs text-primary-foreground/60 mt-1">Vehículos</div>
+                      <div className="text-3xl font-black text-accent">2.5m</div>
+                      <div className="text-xs text-primary-foreground/60 mt-1">Ancho</div>
                     </div>
                     <div>
-                      <div className="text-3xl font-black text-accent">5K+</div>
-                      <div className="text-xs text-primary-foreground/60 mt-1">Clientes</div>
+                      <div className="text-3xl font-black text-accent">90m³</div>
+                      <div className="text-xs text-primary-foreground/60 mt-1">Volumen</div>
                     </div>
                   </div>
                 </div>
@@ -379,10 +376,11 @@ export default function Index() {
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl lg:text-5xl font-black text-primary-foreground">
-              ¿Listo para empezar?
+              ¿Necesitas transportar mercancía?
             </h2>
             <p className="mt-6 text-lg lg:text-xl text-primary-foreground/70 max-w-2xl mx-auto">
-              Solicite una cotización sin compromiso. Nuestro equipo le responderá en menos de 24 horas con la mejor solución para su envío.
+              Cuéntanos qué necesitas y te preparamos un presupuesto sin compromiso. 
+              Respuesta rápida garantizada.
             </p>
             
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -392,7 +390,7 @@ export default function Index() {
                 className="h-14 px-8 text-base font-bold bg-accent hover:bg-accent/90 text-accent-foreground shadow-lg shadow-accent/25"
               >
                 <Link to="/contacto">
-                  Solicitar Cotización Gratuita
+                  Pedir Presupuesto Gratis
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
@@ -402,15 +400,15 @@ export default function Index() {
                 variant="outline"
                 className="h-14 px-8 text-base font-bold border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10"
               >
-                <a href="tel:+34900000000">
+                <a href="tel:+34600000000">
                   <Phone className="mr-2 h-5 w-5" />
-                  Llamar: 900 000 000
+                  Llamar: 600 000 000
                 </a>
               </Button>
             </div>
 
             <p className="mt-8 text-sm text-primary-foreground/50">
-              Respuesta garantizada en menos de 24 horas · Sin compromiso · Atención personalizada
+              Respuesta en menos de 2 horas · Sin compromiso · Trato personal
             </p>
           </div>
         </div>
