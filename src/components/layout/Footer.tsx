@@ -11,7 +11,8 @@ export function Footer() {
           <div className="lg:col-span-1">
             <AxioraLogo size="lg" className="text-primary-foreground [&_span]:text-primary-foreground" />
             <p className="mt-6 text-sm text-primary-foreground/70 leading-relaxed">
-              Especialistas en transporte pesado por carretera. Más de 25 años de experiencia garantizando entregas seguras y puntuales en toda España y Europa.
+              Transporte pesado por carretera con trato personal. 
+              Tu carga es nuestra prioridad.
             </p>
           </div>
 
@@ -54,8 +55,7 @@ export function Footer() {
               <li className="font-medium">Transporte Nacional</li>
               <li className="font-medium">Transporte Internacional</li>
               <li className="font-medium">Carga Completa</li>
-              <li className="font-medium">Mercancías Peligrosas</li>
-              <li className="font-medium">Cargas Especiales</li>
+              <li className="font-medium">Tráiler de Lona</li>
             </ul>
           </div>
 
@@ -65,12 +65,12 @@ export function Footer() {
             <ul className="space-y-4 text-sm">
               <li className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 mt-0.5 shrink-0 text-accent" />
-                <span className="text-primary-foreground/70">Polígono Industrial Norte, Calle Principal 123, Madrid, España</span>
+                <span className="text-primary-foreground/70">Madrid, España</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-5 w-5 shrink-0 text-accent" />
-                <a href="tel:+34900000000" className="text-primary-foreground/70 hover:text-accent transition-colors font-medium">
-                  +34 900 000 000
+                <a href="tel:+34600000000" className="text-primary-foreground/70 hover:text-accent transition-colors font-medium">
+                  +34 600 000 000
                 </a>
               </li>
               <li className="flex items-center gap-3">
@@ -81,7 +81,7 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Clock className="h-5 w-5 shrink-0 text-accent" />
-                <span className="text-primary-foreground/70">Lun - Vie: 8:00 - 20:00</span>
+                <span className="text-primary-foreground/70">Disponible 24/7</span>
               </li>
             </ul>
           </div>
@@ -99,10 +99,7 @@ export function Footer() {
               Acceso Admin
             </Link>
             <a href="#" className="hover:text-accent transition-colors font-medium">
-              Política de Privacidad
-            </a>
-            <a href="#" className="hover:text-accent transition-colors font-medium">
-              Términos
+              Privacidad
             </a>
           </div>
         </div>
