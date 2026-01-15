@@ -203,20 +203,9 @@ export default function Index() {
                 </div>
               </div>
 
-              {/* Floating elements */}
-              <div className="hidden lg:block absolute -top-6 -right-6 bg-accent text-accent-foreground rounded-2xl p-4 shadow-xl animate-float">
-                <div className="flex items-center gap-2">
-                  <Heart className="h-5 w-5" />
-                  <span className="font-bold text-sm">Trato Personal</span>
-                </div>
-              </div>
-              
-              <div className="hidden lg:block absolute -bottom-4 -left-4 bg-card text-foreground rounded-2xl p-4 shadow-xl border border-border/50 animate-float" style={{ animationDelay: "3s" }}>
-                <div className="flex items-center gap-2">
-                  <Truck className="h-5 w-5 text-accent" />
-                  <span className="font-bold text-sm">Certificación FRC</span>
-                </div>
-              </div>
+              {/* Decorative corner accents */}
+              <div className="hidden lg:block absolute -top-3 -right-3 h-16 w-16 bg-accent rounded-2xl -z-10" />
+              <div className="hidden lg:block absolute -bottom-3 -left-3 h-16 w-16 bg-accent/30 rounded-2xl -z-10" />
             </div>
           </div>
         </div>
