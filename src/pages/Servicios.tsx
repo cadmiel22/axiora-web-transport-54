@@ -10,26 +10,26 @@ import {
 const services = [
   {
     icon: Truck,
-    title: "Transporte Nacional",
-    description: "Servicio de transporte de mercancías por carretera en toda España.",
+    title: "Transporte Refrigerado FRC",
+    description: "Tráiler frigorífico certificado para mercancías con control de temperatura.",
     features: [
-      "Cobertura en toda la península ibérica",
-      "Entregas flexibles según sus necesidades",
-      "Tráiler de lona con capacidad de 24 toneladas",
-      "Seguimiento en tiempo real",
-      "Comunicación directa con el conductor"
+      "Certificación FRC (Frigorífico Reforzado Clase C)",
+      "Rango de temperatura: -20°C a +20°C",
+      "Registro continuo de temperatura",
+      "Ideal para alimentación, farmacia y productos sensibles",
+      "Cadena de frío garantizada"
     ]
   },
   {
     icon: Globe,
     title: "Transporte Internacional",
-    description: "Rutas hacia Portugal y Francia, expandiendo horizontes.",
+    description: "Rutas refrigeradas hacia Portugal y Francia.",
     features: [
       "Envíos a Portugal (todo el país)",
       "Rutas hacia Francia",
-      "Gestión de documentación",
+      "Gestión de documentación ATP",
       "Servicio puerta a puerta",
-      "Ampliando destinos próximamente"
+      "Cumplimiento normativa europea"
     ]
   },
   {
@@ -37,23 +37,23 @@ const services = [
     title: "Carga Completa (FTL)",
     description: "Tráiler dedicado exclusivamente para sus mercancías.",
     features: [
-      "Capacidad hasta 24.000 kg",
+      "Capacidad para 33 europalets",
       "Sin manipulación intermedia de la carga",
       "Entregas directas sin transbordos",
-      "Ideal para grandes volúmenes",
+      "Temperatura estable durante todo el trayecto",
       "Flexibilidad horaria de carga y descarga"
     ]
   },
   {
     icon: Shield,
-    title: "Mercancía Segura",
-    description: "Su carga protegida en todo momento durante el transporte.",
+    title: "Cadena de Frío Segura",
+    description: "Su mercancía protegida y a temperatura controlada en todo momento.",
     features: [
-      "Tráiler en perfecto estado",
-      "Sistemas de sujeción de carga",
-      "Lona en óptimas condiciones",
-      "Seguro de transporte",
-      "Conductor experimentado"
+      "Equipo frigorífico de última generación",
+      "Termógrafo digital con impresión de tickets",
+      "Seguimiento GPS en tiempo real",
+      "Seguro de transporte incluido",
+      "Conductor especializado en refrigerado"
     ]
   }
 ];
@@ -78,7 +78,7 @@ export default function Servicios() {
               Nuestros Servicios
             </h1>
             <p className="mt-6 text-lg text-primary-foreground/70">
-              Transporte de mercancías con tráiler de lona. Servicio directo, 
+              Transporte refrigerado con certificación FRC. Servicio directo, 
               sin intermediarios y con la atención que tu carga merece.
             </p>
           </div>
@@ -114,61 +114,61 @@ export default function Servicios() {
         </div>
       </section>
 
-      {/* Our Trailer Section */}
+      {/* Our Equipment Section */}
       <section className="bg-secondary py-20 lg:py-28">
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 text-accent text-sm font-semibold mb-4">
                 <Truck className="h-4 w-4" />
-                Nuestro Vehículo
+                Nuestro Equipo
               </span>
               <h2 className="text-3xl lg:text-4xl font-black text-foreground">
-                Tráiler de Lona
+                Tráiler Frigorífico FRC
               </h2>
               <p className="mt-4 text-lg text-muted-foreground">
-                Vehículo moderno y bien mantenido, preparado para transportar 
-                tu mercancía con total seguridad.
+                Semirremolque refrigerado con certificación FRC, preparado para 
+                mantener la cadena de frío en todo el trayecto.
               </p>
               
               <div className="mt-8 grid grid-cols-2 gap-4">
                 <div className="bg-card rounded-xl p-4 border border-border/50">
-                  <div className="text-2xl font-black text-accent">24 Ton</div>
-                  <div className="text-sm text-muted-foreground">Capacidad de carga</div>
+                  <div className="text-2xl font-black text-accent">-20°C</div>
+                  <div className="text-sm text-muted-foreground">Temperatura mínima</div>
                 </div>
                 <div className="bg-card rounded-xl p-4 border border-border/50">
-                  <div className="text-2xl font-black text-accent">13.6m</div>
-                  <div className="text-sm text-muted-foreground">Longitud útil</div>
+                  <div className="text-2xl font-black text-accent">+20°C</div>
+                  <div className="text-sm text-muted-foreground">Temperatura máxima</div>
                 </div>
                 <div className="bg-card rounded-xl p-4 border border-border/50">
-                  <div className="text-2xl font-black text-accent">90m³</div>
-                  <div className="text-sm text-muted-foreground">Volumen</div>
+                  <div className="text-2xl font-black text-accent">33</div>
+                  <div className="text-sm text-muted-foreground">Europalets</div>
                 </div>
                 <div className="bg-card rounded-xl p-4 border border-border/50">
-                  <div className="text-2xl font-black text-accent">GPS</div>
-                  <div className="text-sm text-muted-foreground">Seguimiento</div>
+                  <div className="text-2xl font-black text-accent">FRC</div>
+                  <div className="text-sm text-muted-foreground">Certificación ATP</div>
                 </div>
               </div>
             </div>
             
             <div className="bg-primary rounded-3xl p-8 lg:p-10 text-primary-foreground">
-              <h3 className="text-xl font-bold mb-6">Características del Tráiler</h3>
+              <h3 className="text-xl font-bold mb-6">Características del Frigorífico</h3>
               <ul className="space-y-4">
                 <li className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 shrink-0 text-accent mt-0.5" />
-                  <span>Lona lateral y superior en perfecto estado</span>
+                  <span>Certificación FRC vigente (ATP internacional)</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 shrink-0 text-accent mt-0.5" />
-                  <span>Sistema de sujeción con barras y cinchas</span>
+                  <span>Equipo de frío de última generación</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 shrink-0 text-accent mt-0.5" />
-                  <span>Piso antideslizante</span>
+                  <span>Termógrafo digital con impresión de tickets</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 shrink-0 text-accent mt-0.5" />
-                  <span>Carga lateral y trasera</span>
+                  <span>Suelo antideslizante y raíles para europalets</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 shrink-0 text-accent mt-0.5" />
@@ -176,7 +176,7 @@ export default function Servicios() {
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 shrink-0 text-accent mt-0.5" />
-                  <span>Seguro de mercancías incluido</span>
+                  <span>Seguro de mercancías refrigeradas incluido</span>
                 </li>
               </ul>
             </div>
