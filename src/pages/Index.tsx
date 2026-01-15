@@ -3,16 +3,16 @@ import { MainLayout } from "@/components/layout/MainLayout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { 
-  Truck, Package, MapPin, Clock, Shield, CheckCircle, 
+  Container, Package, MapPin, Clock, Shield, CheckCircle, 
   ArrowRight, Search, Globe, Users, Award, Phone, 
-  ChevronRight, Zap, Target, TrendingUp, Heart
+  ChevronRight, Zap, Target, TrendingUp, Heart, Truck
 } from "lucide-react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const services = [
   {
-    icon: Truck,
+    icon: Container,
     title: "Transporte Refrigerado",
     description: "Tráiler frigorífico FRC para mercancías con control de temperatura.",
     features: ["Frío garantizado", "Certificación FRC", "Temperatura controlada"]
@@ -96,7 +96,7 @@ export default function Index() {
             {/* Left content */}
             <div className="text-center lg:text-left">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/20 text-accent mb-8">
-                <Truck className="h-4 w-4" />
+                <Container className="h-4 w-4" />
                 <span className="text-sm font-semibold">Transporte Refrigerado FRC</span>
               </div>
               
@@ -203,8 +203,15 @@ export default function Index() {
                 </div>
               </div>
 
-              {/* Decorative corner accents */}
-              <div className="hidden lg:block absolute -top-3 -right-3 h-16 w-16 bg-accent rounded-2xl -z-10" />
+              {/* Floating element */}
+              <div className="hidden lg:block absolute -top-6 -right-6 bg-accent text-accent-foreground rounded-2xl p-4 shadow-xl animate-float">
+                <div className="flex items-center gap-2">
+                  <Heart className="h-5 w-5" />
+                  <span className="font-bold text-sm">Trato Personal</span>
+                </div>
+              </div>
+              
+              {/* Decorative corner accent */}
               <div className="hidden lg:block absolute -bottom-3 -left-3 h-16 w-16 bg-accent/30 rounded-2xl -z-10" />
             </div>
           </div>
@@ -317,7 +324,7 @@ export default function Index() {
             <div className="relative">
               <div className="bg-primary rounded-3xl p-10 lg:p-12 text-primary-foreground">
                 <div className="text-center">
-                  <Truck className="mx-auto h-20 w-20 text-accent" />
+                  <Container className="mx-auto h-20 w-20 text-accent" />
                   <h3 className="mt-6 text-2xl lg:text-3xl font-black">Transporte Refrigerado</h3>
                   <p className="mt-3 text-primary-foreground/70">
                     Frigorífico certificado FRC para garantizar la cadena de frío
