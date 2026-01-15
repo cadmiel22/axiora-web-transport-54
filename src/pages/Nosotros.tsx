@@ -53,8 +53,8 @@ export default function Nosotros() {
               Sobre Axiora
             </h1>
             <p className="mt-6 text-lg text-primary-foreground/70">
-              Una empresa joven con ganas de hacer las cosas bien. 
-              Transporte de confianza con trato personal.
+              Una empresa joven especializada en transporte refrigerado. 
+              Cadena de frío garantizada con trato personal.
             </p>
           </div>
         </div>
@@ -70,7 +70,7 @@ export default function Nosotros() {
                 Nuestra Historia
               </span>
               <h2 className="text-3xl lg:text-4xl font-black text-foreground">
-                Empezamos con un tráiler y muchas ganas
+                Especialistas en transporte refrigerado
               </h2>
               <p className="mt-6 text-lg text-muted-foreground">
                 Axiora nace de la pasión por el transporte y la convicción de que 
@@ -78,12 +78,12 @@ export default function Nosotros() {
                 <strong className="text-foreground"> honestidad</strong> y <strong className="text-foreground">compromiso real</strong>.
               </p>
               <p className="mt-4 text-muted-foreground">
-                Somos una empresa nueva, sí. Pero eso nos hace más ágiles, más flexibles 
-                y más comprometidos. Cada cliente es importante, cada carga es nuestra responsabilidad.
+                Nos hemos especializado en <strong className="text-foreground">transporte frigorífico FRC</strong>, 
+                porque sabemos lo importante que es mantener la cadena de frío para tu mercancía.
               </p>
               <p className="mt-4 text-muted-foreground">
-                No somos una gran empresa con cientos de camiones. Somos personas que 
-                entienden tu negocio y tratamos tu mercancía como si fuera nuestra.
+                Somos ágiles, flexibles y comprometidos. Cada cliente es importante, 
+                cada carga es nuestra responsabilidad.
               </p>
             </div>
             
@@ -167,8 +167,8 @@ export default function Nosotros() {
           <div className="grid gap-8 sm:grid-cols-3 text-center max-w-3xl mx-auto">
             <div>
               <Truck className="mx-auto h-10 w-10 text-accent" />
-              <div className="mt-4 text-4xl font-black text-primary-foreground">1</div>
-              <div className="mt-1 text-primary-foreground/70">Tráiler operativo</div>
+              <div className="mt-4 text-4xl font-black text-primary-foreground">FRC</div>
+              <div className="mt-1 text-primary-foreground/70">Certificación ATP</div>
             </div>
             <div>
               <Target className="mx-auto h-10 w-10 text-accent" />

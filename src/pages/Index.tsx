@@ -13,21 +13,21 @@ import { useNavigate } from "react-router-dom";
 const services = [
   {
     icon: Truck,
-    title: "Transporte Nacional",
-    description: "Cobertura en toda la península ibérica con entregas puntuales.",
-    features: ["Entregas flexibles", "Carga completa", "Rutas directas"]
+    title: "Transporte Refrigerado",
+    description: "Tráiler frigorífico FRC para mercancías con control de temperatura.",
+    features: ["Frío garantizado", "Certificación FRC", "Temperatura controlada"]
   },
   {
     icon: Globe,
-    title: "Transporte Internacional",
-    description: "Conexiones con Portugal y Francia. Ampliando horizontes.",
-    features: ["Portugal", "Francia", "En expansión"]
+    title: "Nacional e Internacional",
+    description: "España, Portugal y Francia. Rutas directas sin transbordos.",
+    features: ["Península Ibérica", "Francia", "Rutas directas"]
   },
   {
     icon: Package,
     title: "Cargas Completas",
     description: "Tráiler dedicado exclusivamente para su mercancía.",
-    features: ["24 toneladas", "Sin transbordos", "Directo"]
+    features: ["Carga completa", "Sin manipulación", "Entrega directa"]
   },
   {
     icon: Shield,
@@ -97,18 +97,18 @@ export default function Index() {
             <div className="text-center lg:text-left">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/20 text-accent mb-8">
                 <Truck className="h-4 w-4" />
-                <span className="text-sm font-semibold">Transporte de Confianza</span>
+                <span className="text-sm font-semibold">Transporte Refrigerado FRC</span>
               </div>
               
               <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black text-primary-foreground leading-[1.1] tracking-tight">
                 Tu carga,{" "}
-                <span className="text-gradient">nuestra</span>
+                <span className="text-gradient">siempre a</span>
                 <br />
-                <span className="text-gradient">prioridad</span>
+                <span className="text-gradient">temperatura</span>
               </h1>
               
               <p className="mt-6 text-lg lg:text-xl text-primary-foreground/70 max-w-xl mx-auto lg:mx-0">
-                Transporte pesado por carretera con <strong className="text-primary-foreground">trato personal</strong> y <strong className="text-primary-foreground">compromiso real</strong>. 
+                <strong className="text-primary-foreground">Transporte frigorífico certificado FRC</strong> con trato personal y compromiso real. 
                 Conectamos España con Europa.
               </p>
 
@@ -214,7 +214,7 @@ export default function Index() {
               <div className="hidden lg:block absolute -bottom-4 -left-4 bg-card text-foreground rounded-2xl p-4 shadow-xl border border-border/50 animate-float" style={{ animationDelay: "3s" }}>
                 <div className="flex items-center gap-2">
                   <Truck className="h-5 w-5 text-accent" />
-                  <span className="font-bold text-sm">24 Toneladas</span>
+                  <span className="font-bold text-sm">Certificación FRC</span>
                 </div>
               </div>
             </div>
@@ -329,17 +329,17 @@ export default function Index() {
               <div className="bg-primary rounded-3xl p-10 lg:p-12 text-primary-foreground">
                 <div className="text-center">
                   <Truck className="mx-auto h-20 w-20 text-accent" />
-                  <h3 className="mt-6 text-2xl lg:text-3xl font-black">Nuestro Tráiler</h3>
+                  <h3 className="mt-6 text-2xl lg:text-3xl font-black">Transporte Refrigerado</h3>
                   <p className="mt-3 text-primary-foreground/70">
-                    Vehículo moderno y bien equipado para garantizar la seguridad de tu carga
+                    Frigorífico certificado FRC para garantizar la cadena de frío
                   </p>
                   
                   <div className="mt-8 flex flex-wrap justify-center gap-4">
                     <span className="inline-flex items-center gap-2 rounded-full bg-primary-foreground/10 px-4 py-2 text-sm font-semibold">
-                      <CheckCircle className="h-4 w-4 text-accent" /> Lona
+                      <CheckCircle className="h-4 w-4 text-accent" /> FRC
                     </span>
                     <span className="inline-flex items-center gap-2 rounded-full bg-primary-foreground/10 px-4 py-2 text-sm font-semibold">
-                      <CheckCircle className="h-4 w-4 text-accent" /> 24 Ton
+                      <CheckCircle className="h-4 w-4 text-accent" /> -20°C a +20°C
                     </span>
                     <span className="inline-flex items-center gap-2 rounded-full bg-primary-foreground/10 px-4 py-2 text-sm font-semibold">
                       <CheckCircle className="h-4 w-4 text-accent" /> GPS
@@ -352,12 +352,12 @@ export default function Index() {
                       <div className="text-xs text-primary-foreground/60 mt-1">Longitud</div>
                     </div>
                     <div>
-                      <div className="text-3xl font-black text-accent">2.5m</div>
-                      <div className="text-xs text-primary-foreground/60 mt-1">Ancho</div>
+                      <div className="text-3xl font-black text-accent">33</div>
+                      <div className="text-xs text-primary-foreground/60 mt-1">Europalets</div>
                     </div>
                     <div>
-                      <div className="text-3xl font-black text-accent">90m³</div>
-                      <div className="text-xs text-primary-foreground/60 mt-1">Volumen</div>
+                      <div className="text-3xl font-black text-accent">24h</div>
+                      <div className="text-xs text-primary-foreground/60 mt-1">Autonomía frío</div>
                     </div>
                   </div>
                 </div>
