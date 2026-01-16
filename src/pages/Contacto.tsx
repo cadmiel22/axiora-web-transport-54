@@ -1,50 +1,10 @@
-import { useState } from "react";
 import { MainLayout } from "@/components/layout/MainLayout";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Card, CardContent } from "@/components/ui/card";
-import { Phone, Mail, MapPin, Clock, CheckCircle } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
-import { useToast } from "@/hooks/use-toast";
+import { Phone, Mail, MapPin, Clock } from "lucide-react";
 
 export default function Contacto() {
-  const { toast } = useToast();
-  const [loading, setLoading] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
-  const [form, setForm] = useState({ name: "", email: "", phone: "", company: "", service_type: "", origin: "", destination: "", cargo_description: "", message: "" });
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-    
-    const { error } = await supabase.from("contact_requests").insert([form]);
-    
-    if (error) {
-      toast({ title: "Error", description: "No se pudo enviar. Intente de nuevo.", variant: "destructive" });
-    } else {
-      setSubmitted(true);
-    }
-    setLoading(false);
-  };
-
-  if (submitted) {
-    return (
-      <MainLayout>
-        <section className="py-24">
-          <div className="container max-w-lg text-center">
-            <CheckCircle className="mx-auto h-16 w-16 text-success" />
-            <h1 className="mt-6 text-3xl font-bold">¡Solicitud Enviada!</h1>
-            <p className="mt-4 text-muted-foreground">Nuestro equipo se pondrá en contacto con usted en menos de 24 horas.</p>
-          </div>
-        </section>
-      </MainLayout>
-    );
-  }
-
   return (
     <MainLayout>
+      {/* Hero */}
       <section className="bg-primary py-16">
         <div className="container">
           <div className="mx-auto max-w-2xl text-center">
@@ -54,45 +14,188 @@ export default function Contacto() {
         </div>
       </section>
 
+      {/* Contact Content */}
       <section className="py-16">
         <div className="container">
           <div className="grid gap-12 lg:grid-cols-3">
+            {/* Form */}
             <div className="lg:col-span-2">
-              <Card>
-                <CardContent className="p-6">
-                  <h2 className="text-xl font-bold mb-6">Solicitar Cotización</h2>
-                  <form onSubmit={handleSubmit} className="grid gap-4 sm:grid-cols-2">
-                    <Input placeholder="Nombre *" required value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} />
-                    <Input type="email" placeholder="Email *" required value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} />
-                    <Input placeholder="Teléfono" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} />
-                    <Input placeholder="Empresa" value={form.company} onChange={(e) => setForm({ ...form, company: e.target.value })} />
-                    <Select onValueChange={(v) => setForm({ ...form, service_type: v })}>
-                      <SelectTrigger><SelectValue placeholder="Tipo de servicio" /></SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="nacional">Transporte Nacional</SelectItem>
-                        <SelectItem value="internacional">Transporte Internacional</SelectItem>
-                        <SelectItem value="ftl">Carga Completa</SelectItem>
-                        <SelectItem value="ltl">Carga Parcial</SelectItem>
-                        <SelectItem value="adr">Mercancías Peligrosas</SelectItem>
-                        <SelectItem value="temperatura">Temperatura Controlada</SelectItem>
-                      </SelectContent>
-                    </Select>
-                    <Input placeholder="Origen" value={form.origin} onChange={(e) => setForm({ ...form, origin: e.target.value })} />
-                    <Input placeholder="Destino" value={form.destination} onChange={(e) => setForm({ ...form, destination: e.target.value })} />
-                    <Input placeholder="Descripción de la carga" value={form.cargo_description} onChange={(e) => setForm({ ...form, cargo_description: e.target.value })} />
-                    <Textarea placeholder="Mensaje adicional" className="sm:col-span-2" value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} />
-                    <Button type="submit" className="sm:col-span-2 bg-accent text-accent-foreground" disabled={loading}>
-                      {loading ? "Enviando..." : "Enviar Solicitud"}
-                    </Button>
-                  </form>
-                </CardContent>
-              </Card>
+              <div className="bg-card rounded-2xl p-8 border border-border/50 shadow-sm">
+                <h2 className="text-xl font-bold mb-6 text-foreground">Solicitar Cotización</h2>
+                <form 
+                  action="/api/contact" 
+                  method="POST" 
+                  className="grid gap-4 sm:grid-cols-2"
+                >
+                  <div>
+                    <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
+                      Nombre *
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      required
+                      className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                      placeholder="Su nombre"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
+                      Email *
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      required
+                      className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                      placeholder="email@ejemplo.com"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-2">
+                      Teléfono
+                    </label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                      placeholder="+34 600 000 000"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="company" className="block text-sm font-medium text-foreground mb-2">
+                      Empresa
+                    </label>
+                    <input
+                      type="text"
+                      id="company"
+                      name="company"
+                      className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                      placeholder="Nombre de la empresa"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="service_type" className="block text-sm font-medium text-foreground mb-2">
+                      Tipo de servicio
+                    </label>
+                    <select
+                      id="service_type"
+                      name="service_type"
+                      className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                    >
+                      <option value="">Seleccione un servicio</option>
+                      <option value="nacional">Transporte Nacional</option>
+                      <option value="internacional">Transporte Internacional</option>
+                      <option value="ftl">Carga Completa</option>
+                      <option value="ltl">Carga Parcial</option>
+                      <option value="temperatura">Temperatura Controlada</option>
+                    </select>
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="origin" className="block text-sm font-medium text-foreground mb-2">
+                      Origen
+                    </label>
+                    <input
+                      type="text"
+                      id="origin"
+                      name="origin"
+                      className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                      placeholder="Ciudad de origen"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="destination" className="block text-sm font-medium text-foreground mb-2">
+                      Destino
+                    </label>
+                    <input
+                      type="text"
+                      id="destination"
+                      name="destination"
+                      className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                      placeholder="Ciudad de destino"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="cargo_description" className="block text-sm font-medium text-foreground mb-2">
+                      Descripción de la carga
+                    </label>
+                    <input
+                      type="text"
+                      id="cargo_description"
+                      name="cargo_description"
+                      className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                      placeholder="Tipo de mercancía, peso, etc."
+                    />
+                  </div>
+                  
+                  <div className="sm:col-span-2">
+                    <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
+                      Mensaje adicional
+                    </label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      rows={4}
+                      className="flex min-h-[80px] w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                      placeholder="Indique cualquier información adicional relevante"
+                    />
+                  </div>
+                  
+                  <div className="sm:col-span-2">
+                    <button 
+                      type="submit"
+                      className="w-full h-12 px-6 font-bold bg-accent text-accent-foreground hover:bg-accent/90 rounded-md transition-colors"
+                    >
+                      Enviar Solicitud
+                    </button>
+                  </div>
+                </form>
+              </div>
             </div>
+            
+            {/* Contact Info */}
             <div className="space-y-6">
-              <Card><CardContent className="p-6 flex gap-4"><Phone className="h-6 w-6 text-accent shrink-0" /><div><h3 className="font-semibold">Teléfono</h3><p className="text-muted-foreground">+34 900 000 000</p></div></CardContent></Card>
-              <Card><CardContent className="p-6 flex gap-4"><Mail className="h-6 w-6 text-accent shrink-0" /><div><h3 className="font-semibold">Email</h3><p className="text-muted-foreground">info@axiora.es</p></div></CardContent></Card>
-              <Card><CardContent className="p-6 flex gap-4"><MapPin className="h-6 w-6 text-accent shrink-0" /><div><h3 className="font-semibold">Dirección</h3><p className="text-muted-foreground">Polígono Industrial Norte, Madrid</p></div></CardContent></Card>
-              <Card><CardContent className="p-6 flex gap-4"><Clock className="h-6 w-6 text-accent shrink-0" /><div><h3 className="font-semibold">Horario</h3><p className="text-muted-foreground">Lun-Vie: 8:00-20:00</p></div></CardContent></Card>
+              <div className="bg-card rounded-2xl p-6 border border-border/50 shadow-sm flex gap-4">
+                <Phone className="h-6 w-6 text-accent shrink-0" />
+                <div>
+                  <h3 className="font-semibold text-foreground">Teléfono</h3>
+                  <p className="text-muted-foreground">+34 900 000 000</p>
+                </div>
+              </div>
+              
+              <div className="bg-card rounded-2xl p-6 border border-border/50 shadow-sm flex gap-4">
+                <Mail className="h-6 w-6 text-accent shrink-0" />
+                <div>
+                  <h3 className="font-semibold text-foreground">Email</h3>
+                  <p className="text-muted-foreground">info@axiora.es</p>
+                </div>
+              </div>
+              
+              <div className="bg-card rounded-2xl p-6 border border-border/50 shadow-sm flex gap-4">
+                <MapPin className="h-6 w-6 text-accent shrink-0" />
+                <div>
+                  <h3 className="font-semibold text-foreground">Dirección</h3>
+                  <p className="text-muted-foreground">Polígono Industrial Norte, Madrid</p>
+                </div>
+              </div>
+              
+              <div className="bg-card rounded-2xl p-6 border border-border/50 shadow-sm flex gap-4">
+                <Clock className="h-6 w-6 text-accent shrink-0" />
+                <div>
+                  <h3 className="font-semibold text-foreground">Horario</h3>
+                  <p className="text-muted-foreground">Lun-Vie: 8:00-20:00</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
