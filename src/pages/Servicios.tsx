@@ -1,15 +1,12 @@
-import { Link } from "react-router-dom";
 import { MainLayout } from "@/components/layout/MainLayout";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { 
-  Truck, Package, Globe, Shield, MapPin, Clock,
+  Container, Package, Globe, Shield, MapPin,
   ArrowRight, CheckCircle, Phone
 } from "lucide-react";
 
 const services = [
   {
-    icon: Truck,
+    icon: Container,
     title: "Transporte Refrigerado FRC",
     description: "Tráiler frigorífico certificado para mercancías con control de temperatura.",
     features: [
@@ -90,25 +87,24 @@ export default function Servicios() {
         <div className="container">
           <div className="grid gap-8 md:grid-cols-2">
             {services.map((service) => (
-              <Card key={service.title} className="flex flex-col border-border/50 hover:border-accent/30 hover:shadow-xl transition-all duration-300">
-                <CardHeader>
-                  <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-accent/10 text-accent">
-                    <service.icon className="h-7 w-7" />
-                  </div>
-                  <CardTitle className="text-2xl">{service.title}</CardTitle>
-                  <p className="text-muted-foreground">{service.description}</p>
-                </CardHeader>
-                <CardContent className="flex-1">
-                  <ul className="space-y-3">
-                    {service.features.map((feature) => (
-                      <li key={feature} className="flex items-start gap-3">
-                        <CheckCircle className="h-5 w-5 shrink-0 text-accent mt-0.5" />
-                        <span className="text-foreground">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
+              <div 
+                key={service.title} 
+                className="flex flex-col bg-card rounded-2xl p-8 border border-border/50 shadow-sm"
+              >
+                <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-accent/10 text-accent">
+                  <service.icon className="h-7 w-7" />
+                </div>
+                <h2 className="text-2xl font-bold text-foreground">{service.title}</h2>
+                <p className="mt-2 text-muted-foreground">{service.description}</p>
+                <ul className="mt-6 space-y-3 flex-1">
+                  {service.features.map((feature) => (
+                    <li key={feature} className="flex items-start gap-3">
+                      <CheckCircle className="h-5 w-5 shrink-0 text-accent mt-0.5" />
+                      <span className="text-foreground">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             ))}
           </div>
         </div>
@@ -120,7 +116,7 @@ export default function Servicios() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 text-accent text-sm font-semibold mb-4">
-                <Truck className="h-4 w-4" />
+                <Container className="h-4 w-4" />
                 Nuestro Equipo
               </span>
               <h2 className="text-3xl lg:text-4xl font-black text-foreground">
@@ -230,23 +226,17 @@ export default function Servicios() {
               Respuesta rápida garantizada.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button asChild size="lg" className="h-14 px-8 font-bold bg-accent text-accent-foreground hover:bg-accent/90">
-                <Link to="/contacto">
-                  Pedir Presupuesto
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-              <Button 
-                asChild 
-                size="lg" 
-                variant="outline"
-                className="h-14 px-8 font-bold border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10"
+              <a 
+                href="/contacto"
+                className="inline-flex items-center justify-center h-14 px-8 font-bold bg-accent text-accent-foreground hover:bg-accent/90 rounded-md transition-colors"
               >
-                <a href="tel:+34600000000">
-                  <Phone className="mr-2 h-5 w-5" />
-                  600 000 000
-                </a>
-              </Button>
+                Pedir Presupuesto
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </a>
+              <span className="inline-flex items-center justify-center h-14 px-8 font-bold border border-primary-foreground/20 text-primary-foreground rounded-md">
+                <Phone className="mr-2 h-5 w-5" />
+                600 000 000
+              </span>
             </div>
           </div>
         </div>
