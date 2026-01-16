@@ -1,42 +1,8 @@
-import { Link } from "react-router-dom";
 import { MainLayout } from "@/components/layout/MainLayout";
-import { Button } from "@/components/ui/button";
 import { 
-  Truck, Users, Award, Target, Eye, Heart,
+  Container, Users, Award, Target, Eye, Heart,
   ArrowRight, CheckCircle, Zap, Shield, Phone
 } from "lucide-react";
-
-const values = [
-  {
-    icon: Heart,
-    title: "Trato Personal",
-    description: "Hablamos contigo directamente. Sin intermediarios, sin call centers, sin esperas."
-  },
-  {
-    icon: Target,
-    title: "Compromiso",
-    description: "Cuando decimos que llegamos, llegamos. Tu carga es nuestra responsabilidad."
-  },
-  {
-    icon: Zap,
-    title: "Agilidad",
-    description: "Decisiones rápidas, respuestas inmediatas. La flexibilidad de ser pequeños."
-  },
-  {
-    icon: Shield,
-    title: "Confianza",
-    description: "Transparencia total. Te informamos en todo momento del estado de tu envío."
-  }
-];
-
-const whyUs = [
-  "Trato directo con el propietario",
-  "Precios competitivos sin intermediarios",
-  "Flexibilidad horaria para cargas y descargas",
-  "Comunicación constante durante el transporte",
-  "Seguimiento GPS en tiempo real",
-  "Compromiso personal con cada envío"
-];
 
 export default function Nosotros() {
   return (
@@ -90,12 +56,30 @@ export default function Nosotros() {
             <div className="bg-secondary rounded-3xl p-8 lg:p-10">
               <h3 className="text-xl font-bold text-foreground mb-6">¿Por qué elegirnos?</h3>
               <ul className="space-y-4">
-                {whyUs.map((item) => (
-                  <li key={item} className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 shrink-0 text-accent mt-0.5" />
-                    <span className="text-foreground">{item}</span>
-                  </li>
-                ))}
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="h-5 w-5 shrink-0 text-accent mt-0.5" />
+                  <span className="text-foreground">Trato directo con el propietario</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="h-5 w-5 shrink-0 text-accent mt-0.5" />
+                  <span className="text-foreground">Precios competitivos sin intermediarios</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="h-5 w-5 shrink-0 text-accent mt-0.5" />
+                  <span className="text-foreground">Flexibilidad horaria para cargas y descargas</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="h-5 w-5 shrink-0 text-accent mt-0.5" />
+                  <span className="text-foreground">Comunicación constante durante el transporte</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="h-5 w-5 shrink-0 text-accent mt-0.5" />
+                  <span className="text-foreground">Seguimiento GPS en tiempo real</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="h-5 w-5 shrink-0 text-accent mt-0.5" />
+                  <span className="text-foreground">Compromiso personal con cada envío</span>
+                </li>
               </ul>
             </div>
           </div>
@@ -148,15 +132,34 @@ export default function Nosotros() {
             </p>
           </div>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {values.map((value) => (
-              <div key={value.title} className="bg-card rounded-2xl p-6 text-center border border-border/50 hover:border-accent/30 hover:shadow-xl transition-all duration-300">
-                <div className="mx-auto mb-4 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-accent text-accent-foreground">
-                  <value.icon className="h-7 w-7" />
-                </div>
-                <h3 className="text-lg font-bold text-foreground">{value.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{value.description}</p>
+            <div className="bg-card rounded-2xl p-6 text-center border border-border/50">
+              <div className="mx-auto mb-4 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-accent text-accent-foreground">
+                <Heart className="h-7 w-7" />
               </div>
-            ))}
+              <h3 className="text-lg font-bold text-foreground">Trato Personal</h3>
+              <p className="mt-2 text-sm text-muted-foreground">Hablamos contigo directamente. Sin intermediarios, sin call centers, sin esperas.</p>
+            </div>
+            <div className="bg-card rounded-2xl p-6 text-center border border-border/50">
+              <div className="mx-auto mb-4 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-accent text-accent-foreground">
+                <Target className="h-7 w-7" />
+              </div>
+              <h3 className="text-lg font-bold text-foreground">Compromiso</h3>
+              <p className="mt-2 text-sm text-muted-foreground">Cuando decimos que llegamos, llegamos. Tu carga es nuestra responsabilidad.</p>
+            </div>
+            <div className="bg-card rounded-2xl p-6 text-center border border-border/50">
+              <div className="mx-auto mb-4 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-accent text-accent-foreground">
+                <Zap className="h-7 w-7" />
+              </div>
+              <h3 className="text-lg font-bold text-foreground">Agilidad</h3>
+              <p className="mt-2 text-sm text-muted-foreground">Decisiones rápidas, respuestas inmediatas. La flexibilidad de ser pequeños.</p>
+            </div>
+            <div className="bg-card rounded-2xl p-6 text-center border border-border/50">
+              <div className="mx-auto mb-4 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-accent text-accent-foreground">
+                <Shield className="h-7 w-7" />
+              </div>
+              <h3 className="text-lg font-bold text-foreground">Confianza</h3>
+              <p className="mt-2 text-sm text-muted-foreground">Transparencia total. Te informamos en todo momento del estado de tu envío.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -166,7 +169,7 @@ export default function Nosotros() {
         <div className="container">
           <div className="grid gap-8 sm:grid-cols-3 text-center max-w-3xl mx-auto">
             <div>
-              <Truck className="mx-auto h-10 w-10 text-accent" />
+              <Container className="mx-auto h-10 w-10 text-accent" />
               <div className="mt-4 text-4xl font-black text-primary-foreground">FRC</div>
               <div className="mt-1 text-primary-foreground/70">Certificación ATP</div>
             </div>
@@ -196,23 +199,20 @@ export default function Nosotros() {
               Sin compromiso, con total transparencia.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button asChild size="lg" className="h-14 px-8 font-bold bg-accent text-accent-foreground hover:bg-accent/90">
-                <Link to="/contacto">
-                  Contactar
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-              <Button 
-                asChild 
-                size="lg" 
-                variant="outline"
-                className="h-14 px-8 font-bold"
+              <a 
+                href="/contacto"
+                className="inline-flex items-center justify-center h-14 px-8 font-bold bg-accent text-accent-foreground rounded-md hover:bg-accent/90"
               >
-                <a href="tel:+34600000000">
-                  <Phone className="mr-2 h-5 w-5" />
-                  600 000 000
-                </a>
-              </Button>
+                Contactar
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </a>
+              <a 
+                href="tel:+34600000000"
+                className="inline-flex items-center justify-center h-14 px-8 font-bold border border-border rounded-md hover:bg-secondary"
+              >
+                <Phone className="mr-2 h-5 w-5" />
+                600 000 000
+              </a>
             </div>
           </div>
         </div>
