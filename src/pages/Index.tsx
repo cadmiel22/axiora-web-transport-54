@@ -3,6 +3,7 @@ import {
   Container, Package, Globe, Shield, CheckCircle, 
   ArrowRight, Award, Phone, Zap, Heart, TrendingUp, Star, Quote
 } from "lucide-react";
+import trailerImage from "@/assets/trailer-axiora.png";
 
 const services = [
   {
@@ -151,53 +152,15 @@ export default function Index() {
               </div>
             </div>
 
-            {/* Right - Info Box */}
+            {/* Right - Trailer Image */}
             <div className="relative">
-              <div className="bg-card/95 backdrop-blur-xl rounded-3xl p-8 lg:p-10 shadow-2xl border border-border/50">
-                <div className="text-center">
-                  <Container className="mx-auto h-16 w-16 text-accent" />
-                  <h2 className="mt-6 text-2xl lg:text-3xl font-black text-foreground">Transporte Refrigerado</h2>
-                  <p className="mt-3 text-muted-foreground">
-                    Frigorífico certificado FRC para garantizar la cadena de frío
-                  </p>
-                  
-                  <div className="mt-8 flex flex-wrap justify-center gap-3">
-                    <span className="inline-flex items-center gap-2 rounded-full bg-accent/10 px-4 py-2 text-sm font-semibold text-foreground">
-                      <CheckCircle className="h-4 w-4 text-accent" /> FRC
-                    </span>
-                    <span className="inline-flex items-center gap-2 rounded-full bg-accent/10 px-4 py-2 text-sm font-semibold text-foreground">
-                      <CheckCircle className="h-4 w-4 text-accent" /> -20°C a +20°C
-                    </span>
-                    <span className="inline-flex items-center gap-2 rounded-full bg-accent/10 px-4 py-2 text-sm font-semibold text-foreground">
-                      <CheckCircle className="h-4 w-4 text-accent" /> GPS
-                    </span>
-                  </div>
-
-                  <div className="mt-8 pt-8 border-t border-border/50 grid grid-cols-3 gap-4">
-                    <div>
-                      <div className="text-3xl font-black text-accent">13.6m</div>
-                      <div className="text-xs text-muted-foreground mt-1">Longitud</div>
-                    </div>
-                    <div>
-                      <div className="text-3xl font-black text-accent">33</div>
-                      <div className="text-xs text-muted-foreground mt-1">Europalets</div>
-                    </div>
-                    <div>
-                      <div className="text-3xl font-black text-accent">24h</div>
-                      <div className="text-xs text-muted-foreground mt-1">Autonomía frío</div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="mt-8 pt-6 border-t border-border/50">
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-muted-foreground">¿Necesitas ayuda?</span>
-                    <span className="flex items-center gap-2 text-sm font-semibold text-accent">
-                      <Phone className="h-4 w-4" />
-                      600 000 000
-                    </span>
-                  </div>
-                </div>
+              <div className="rounded-3xl overflow-hidden shadow-2xl border border-border/50">
+                <img 
+                  src={trailerImage} 
+                  alt="Tráiler refrigerado Axiora en carretera" 
+                  className="w-full h-auto object-cover object-center"
+                  style={{ marginTop: '-10%', marginBottom: '-10%' }}
+                />
               </div>
 
               {/* Decorative corner accent */}
