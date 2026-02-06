@@ -152,8 +152,8 @@ export default function Index() {
               </div>
             </div>
 
-            {/* Right - Image with Info Card */}
-            <div className="relative">
+            {/* Right - Image and Info Card stacked */}
+            <div className="relative space-y-6">
               {/* Trailer Image */}
               <div className="rounded-3xl overflow-hidden shadow-2xl border border-border/50">
                 <img 
@@ -163,43 +163,43 @@ export default function Index() {
                 />
               </div>
 
-              {/* Floating Info Card */}
-              <div className="absolute -bottom-8 left-4 right-4 lg:-bottom-12 lg:left-6 lg:right-6 bg-card/95 backdrop-blur-xl rounded-2xl p-4 lg:p-6 shadow-2xl border border-border/50">
-                <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+              {/* Info Card */}
+              <div className="bg-card/95 backdrop-blur-xl rounded-2xl p-6 shadow-xl border border-border/50">
+                <div className="flex flex-col gap-4">
                   <div className="flex items-center gap-3">
                     <div className="h-12 w-12 rounded-xl bg-accent/10 flex items-center justify-center shrink-0">
                       <Container className="h-6 w-6 text-accent" />
                     </div>
                     <div>
                       <h3 className="font-bold text-foreground">Transporte Refrigerado</h3>
-                      <p className="text-sm text-muted-foreground">Frigorífico certificado FRC</p>
+                      <p className="text-sm text-muted-foreground">Frigorífico certificado FRC para garantizar la cadena de frío</p>
                     </div>
                   </div>
                   
                   <div className="flex flex-wrap gap-2">
-                    <span className="inline-flex items-center gap-1 rounded-full bg-accent/10 px-3 py-1 text-xs font-semibold text-foreground">
-                      <CheckCircle className="h-3 w-3 text-accent" /> FRC
+                    <span className="inline-flex items-center gap-1 rounded-full bg-accent/10 px-3 py-1.5 text-sm font-semibold text-foreground">
+                      <CheckCircle className="h-4 w-4 text-accent" /> FRC
                     </span>
-                    <span className="inline-flex items-center gap-1 rounded-full bg-accent/10 px-3 py-1 text-xs font-semibold text-foreground">
-                      <CheckCircle className="h-3 w-3 text-accent" /> -20°C a +20°C
+                    <span className="inline-flex items-center gap-1 rounded-full bg-accent/10 px-3 py-1.5 text-sm font-semibold text-foreground">
+                      <CheckCircle className="h-4 w-4 text-accent" /> -20°C a +20°C
                     </span>
-                    <span className="inline-flex items-center gap-1 rounded-full bg-accent/10 px-3 py-1 text-xs font-semibold text-foreground">
-                      <CheckCircle className="h-3 w-3 text-accent" /> GPS
+                    <span className="inline-flex items-center gap-1 rounded-full bg-accent/10 px-3 py-1.5 text-sm font-semibold text-foreground">
+                      <CheckCircle className="h-4 w-4 text-accent" /> GPS
                     </span>
                   </div>
 
-                  <div className="flex items-center gap-6 lg:gap-4">
+                  <div className="grid grid-cols-3 gap-4 pt-4 border-t border-border/50">
                     <div className="text-center">
-                      <div className="text-xl font-black text-accent">13.6m</div>
+                      <div className="text-2xl font-black text-accent">13.6m</div>
                       <div className="text-xs text-muted-foreground">Longitud</div>
                     </div>
                     <div className="text-center">
-                      <div className="text-xl font-black text-accent">33</div>
+                      <div className="text-2xl font-black text-accent">33</div>
                       <div className="text-xs text-muted-foreground">Europalets</div>
                     </div>
                     <div className="text-center">
-                      <div className="text-xl font-black text-accent">24h</div>
-                      <div className="text-xs text-muted-foreground">Autonomía</div>
+                      <div className="text-2xl font-black text-accent">24h</div>
+                      <div className="text-xs text-muted-foreground">Autonomía frío</div>
                     </div>
                   </div>
                 </div>
@@ -207,6 +207,7 @@ export default function Index() {
 
               {/* Decorative corner accent */}
               <div className="hidden lg:block absolute -top-3 -right-3 h-16 w-16 bg-accent rounded-2xl -z-10" />
+              <div className="hidden lg:block absolute -bottom-3 -left-3 h-16 w-16 bg-accent/30 rounded-2xl -z-10" />
             </div>
           </div>
         </div>
