@@ -159,7 +159,6 @@ export default function Index() {
                   src={trailerImage} 
                   alt="Tráiler refrigerado Axiora en carretera" 
                   className="w-full h-auto object-cover object-center"
-                  style={{ marginTop: '-10%', marginBottom: '-10%' }}
                 />
               </div>
 
