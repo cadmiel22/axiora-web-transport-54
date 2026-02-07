@@ -214,7 +214,7 @@ export default function Index() {
       </section>
 
       {/* Services Section */}
-      <section className="py-24 lg:py-32 bg-secondary">
+      <section className="py-12 lg:py-16 bg-secondary">
         <div className="container">
           <div className="text-center mb-16">
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 text-accent text-sm font-semibold mb-4">
