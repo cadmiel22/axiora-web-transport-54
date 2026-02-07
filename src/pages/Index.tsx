@@ -270,7 +270,7 @@ export default function Index() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-24 lg:py-32">
+      <section className="py-12 lg:py-16">
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
