@@ -5,7 +5,7 @@ import { AxioraLogo } from "@/components/AxioraLogo";
 export function Footer() {
   return (
     <footer className="bg-primary text-primary-foreground">
-      <div className="container py-16 lg:py-20">
+      <div className="container py-10 lg:py-12">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           {/* Company Info */}
           <div className="lg:col-span-1">
