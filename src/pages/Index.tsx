@@ -80,7 +80,7 @@ export default function Index() {
   return (
     <MainLayout>
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center gradient-hero overflow-hidden">
+      <section className="relative py-16 lg:py-20 gradient-hero overflow-hidden">
         {/* Background elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-20 left-10 w-72 h-72 bg-accent/10 rounded-full blur-3xl" />
