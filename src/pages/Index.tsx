@@ -153,7 +153,7 @@ export default function Index() {
             </div>
 
             {/* Right - Image and Info Card stacked */}
-            <div className="relative space-y-6">
+            <div className="relative space-y-6 pb-8 lg:pb-12">
               {/* Trailer Image */}
               <div className="rounded-3xl overflow-hidden shadow-2xl border border-border/50">
                 <img 
