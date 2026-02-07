@@ -164,7 +164,7 @@ export default function Index() {
               </div>
 
               {/* Info Card */}
-              <div className="bg-card/95 backdrop-blur-xl rounded-2xl p-6 shadow-xl border border-border/50">
+              <div className="bg-card/95 backdrop-blur-xl rounded-2xl p-6 shadow-xl border border-border/50 mb-8 lg:mb-0">
                 <div className="flex flex-col gap-4">
                   <div className="flex items-center gap-3">
                     <div className="h-12 w-12 rounded-xl bg-accent/10 flex items-center justify-center shrink-0">
